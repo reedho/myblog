@@ -1,0 +1,13 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "zola build",
+    "publish": "wrangler pages deploy --project-name=myblog --branch=main --commit-dirty=true ./public",
+    "deploy": "pnpm run build && pnpm run publish"
+  },
+  "devDependencies": {
+    "wrangler": "^3.67.1"
+  }
+}
