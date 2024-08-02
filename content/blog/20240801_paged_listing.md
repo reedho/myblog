@@ -7,8 +7,18 @@ lib=["missionary", "datalevin"]
 +++
 
 This function demonstrated how we can create paging data out of a collection of
-entities, utilizing the [missionary](https://github.com/leonoel/missionary) flow
-to achieve safe and performant concurrent processing.
+entity id (eid), utilizing the
+[missionary](https://github.com/leonoel/missionary) _flow_ to achieve safe and
+performant concurrent processing.
+
+One important thing is that we want to reduce the overheads of pulling the
+entity attributes first, and then filtering them down to just a small subset
+based on the requested page.
+
+So, basically, we query first to return only the eids, do page filtering and
+then pull the necessary attributes just for the requested items. Bonus points,
+we can make use the excellent missionary forking mechanism to parallelize the
+attribute pull and data transform operation on it.
 
 ```clojure
 (defn paged-listing
@@ -49,8 +59,8 @@ The `eids` argument is, in this case, could be a values returned from
             :where
             [?e :locatorCode]]
           (d/db conn))
-     (sort #(compare %2 %2))
-     (take 10))
+     (sort #(compare %2 %1))
+     (take 1000000))
 ```
 
 <br />
@@ -77,7 +87,7 @@ And, finally, the typical usage could be some thing like this:
 ;; =>
 {:totalItems 6,
  :pnrReportSummaries
- [{:locatorCode "9EA5F385" ,,, } {:locatorCode "YCTKQZJ2" ,,, } ,,, ],
+ [{:locatorCode "9EA5F385" ,,, } {:locatorCode "YCTKQZJ2" ,,, }],
  :currentPage 2,
  :totalPage 3,
  :itemsPerPage 2}
