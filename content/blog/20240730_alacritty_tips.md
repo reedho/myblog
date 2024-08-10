@@ -10,4 +10,5 @@ Shift + PgUp     Scroll up
 Shift + PgDown   Scroll down
 Shift + Home     Scroll to top
 Shift + End      Scroll to bottom
+Ctl + Shift + F  Open search input, press Esc to close
 ```
