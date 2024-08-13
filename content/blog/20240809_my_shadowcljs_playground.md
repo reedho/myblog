@@ -122,6 +122,13 @@ Verify if all things works as expected e.g. by typing below code in the repl.
     (.then #(tap> %)))
 ```
 
+## Cljs Libs
+
+- https://github.com/leonoel/missionary - `[missionary/missionary "b.39"]`
+- https://github.com/mfikes/cljs-bean - `[cljs-bean/cljs-bean "1.9.0"]`
+- https://github.com/applied-science/js-interop - `[applied-science/js-interop "0.4.2"]`
+- https://github.com/hyperfiddle/rcf - `[com.hyperfiddle/rcf "20220926-202227"]`
+
 ## Day to day tips
 
 To inspect a npm package, use this.

@@ -17,4 +17,21 @@ jenv add /usr/local/Cellar/openjdk/22.0.2/
 
 # update java version to be used globally
 jenv global 22.0.2
+
+# gh cli
+brew ugrade gh
+gh extension install yusukebe/gh-markdown-preview
+gh extension upgrade markdown-preview
 ```
+
+---
+
+How to print Github README
+
+```bash
+cd ... #// go to repo dir
+gh markdown-preview
+```
+
+It will open browser tab to http://localhost:3333. We can then print this page
+with `Command P` as usual, using scale of 75% seems okay to save same papers.
