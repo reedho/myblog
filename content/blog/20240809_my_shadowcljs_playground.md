@@ -15,7 +15,7 @@ could be used for.
 
 ## Setup
 
-```shell
+```bash
 bun init
 cd shadowcljs_playground
 bun add --dev shadow-cljs
@@ -63,7 +63,7 @@ Now we configure a build:
 As a simple example, now we will add some npm package and create a demo source
 file.
 
-```shell
+```bash
 bun add uid
 ```
 
@@ -82,14 +82,14 @@ File `./src/main/my/app.cljs`:
 
 With this build setting and the source file, now we can:
 
-```shell
+```bash
 bunx shadow-cljs compile app # compile for development build
 bunx shadow-cljs release app # compile for release build
 ```
 
 Now we can verify the release build result with some thing like this.
 
-```shell
+```bash
 pushd public/assets/app/js  #// go to output dir
 bun --print 'require("./main.js").my.app.hello()' #// this will print random uid to stdout
 popd

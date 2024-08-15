@@ -8,7 +8,7 @@ macbook machine.
 
 Some regular commands which are executed routinely to make this machine saner.
 
-```shell
+```bash
 # update clojure
 brew upgrade clojure
 
