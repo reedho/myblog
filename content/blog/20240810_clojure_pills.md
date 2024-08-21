@@ -3,6 +3,13 @@ title = "Clojure Pills"
 date = 2024-08-10
 +++
 
+## Verses
+
+- If some operations are implemented as macros instead of functions, one reason
+  is whether we want the execution to be done at compile time or run time.
+  Compiling or transpiling from one thing to another at compile time is the
+  domain of macros.
+
 ## Practicalli's Clojure CLI Config
 
 _Saturday, 10 Aug 2024_
